@@ -74,7 +74,7 @@ Now that you have an agent crated, you're ready to configure it. In this exercis
         4. **Links to official resources** (when applicable)
         ```
 
-    ![Screenshot of the AI agent setup page in Foundry portal.](./Media/ai-agent-setup-new.png)
+    ![Screenshot of the AI agent setup page in Foundry portal.](./Media/lab1-1.png)
 
 1. Below the **Instructions**, expand the **Tools** section.
 1. Select **Upload files**
@@ -98,7 +98,7 @@ Now that you've created an agent, you can test it in the playground chat.
 1. Try the following follow-up prompt: `I want to build mid-scale housing (5–15 units) in Quebec with a $3M budget. Provide a ready to download txt document to answer the question: "Which CMHC solutions apply?"` and review the response.
 1. The agent should use the code interpreter to prepare the housing solution text file, and provide a link so you can download it.
 
-    ![Screenshot of the Agent Playground in Foundry portal.](./Media/lab1-1.png)
+    ![Screenshot of the Agent Playground in Foundry portal.](./Media/lab1-2.png)
 
 1. Download and open the text document to see the housing solution details.
 
@@ -108,7 +108,7 @@ After experimenting with your agent in the playground, you may want to integrate
 
 1. In the agent playground, select the **Code** tab to view the sample code.
 
-    ![Screenshot showing the Code tab in the agent playground.](./Media/ai-agent-code-tab.png)
+    ![Screenshot showing the Code tab in the agent playground.](./Media/lab1-3.png)
 
 1. Review the Python code. This code demonstrates how to:
     - Connect to your agent using the Azure AI Projects SDK
