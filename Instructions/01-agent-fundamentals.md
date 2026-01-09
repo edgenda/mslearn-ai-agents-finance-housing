@@ -6,7 +6,7 @@ lab:
 
 # Explore AI Agent development
 
-In this exercise, you use the Azure AI Agent service in the Microsoft Foundry portal to create a simple AI agent that assists employees with expense claims.
+In this exercise, you use the Azure AI Agent service in the Microsoft Foundry portal to create a simple AI agent that assists professionals with housing solutions choice.
 
 This exercise takes approximately **30** minutes.
 
@@ -33,22 +33,20 @@ Let's start by creating a Foundry project.
 
 1. Select **Create** and wait for your project to be created.
 1. When your project is created, select **Start building**, and select **Create agent** from the drop-down menu.
-1. Set the **Agent name** to `expense-agent` and create the agent.
+1. Set the **Agent name** to `housing-solutions-agent` and create the agent.
 
 The playground will open for your newly created agent. You'll see that an available deployed model is already selected for you.
 
 ## Configure your agent
 
-Now that you have an agent crated, you're ready to configure it. In this exercise, you'll configure a simple agent that answers questions based on a corporate expense policy. You'll download the expenses policy document, and use it as *grounding* data for the agent.
+Now that you have an agent crated, you're ready to configure it. In this exercise, you'll configure a simple agent that answers questions based on the official CMHC Housing Solutions Comparison Table. You'll download the CMHC Housing Solutions Comparison Table document, and use it as *grounding* data for the agent.
 
-1. Open another browser tab, and download [Expenses_policy.docx](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx) from `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` and save it locally. This document contains details of the expenses policy for the fictional Contoso corporation.
+1. Open another browser tab, and download [Expenses_policy.docx](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx) from `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` and save it locally. This document contains details of Housing Solutions provided by CMHC.
 1. Return to the browser tab where you have the playground open for your expense agent.
 1. Set the **Instructions** to:
 
     ```prompt
-   You are an AI assistant for corporate expenses.
-   You answer questions about expenses based on the expenses policy data.
-   If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
+        You are Housing Solutions Agent, an expert assistant on Canadian housing funding and financing programs. You rely exclusively on the document "CMHC Housing Solutions Comparison Table" provided as your knowledge source. Your responsibilities are to: - answer questions about available housing programs, - filter relevant solutions based on the user's needs, - clearly explain key eligibility criteria, - highlight main conditions and constraints, - provide practical, decision-oriented recommendations. Your responses must be clear, structured, and practical. If information is not present in the document, explicitly state that it is not available and ask for clarification if needed. Expected response structure: 1) Summary of relevant solutions 2) Key criteria per solution 3) Practical recommendations 4) When applicable, links to official resources.
     ```
 
     ![Screenshot of the AI agent setup page in Foundry portal.](./Media/ai-agent-setup-new.png)
@@ -56,7 +54,7 @@ Now that you have an agent crated, you're ready to configure it. In this exercis
 1. Below the **Instructions**, expand the **Tools** section.
 1. Select **Upload files**
 1. Keep the default values for the **Index option** and **Vector index name**.
-1. Use the **browse for files** option to upload the **Expenses_policy.docx** local file that you downloaded previously.
+1. Use the **browse for files** option to upload the **cmhc_housing_solutions_comparison_table.pdf** local file that you downloaded previously.
 1. When your file is successfully uploaded, select **Attach**.
 1. In the **Tools** section, verify that a new **File search** is listed and shown as containing 1 file.
 1. In the **Tools** section, select **+ Add**.
@@ -68,18 +66,16 @@ Your agent will use the document you uploaded as its knowledge source to *ground
 
 Now that you've created an agent, you can test it in the playground chat.
 
-1. In the playground chat entry, enter the prompt: `What's the maximum I can claim for meals?` and review the agent's response - which should be based on information in the expenses policy document you added as knowledge to the agent setup.
+1. In the playground chat entry, enter the prompt: `Which housing programs are available in British Columbia?` and review the agent's response - which should be based on information in the CMHC Housing Solutions Comparison document you added as knowledge to the agent setup.
 
     > **Note**: If the agent fails to respond because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond. If the problem persists, try to increase the quota for your model on the **Models** page.
 
-1. Try the following follow-up prompt: `I'd like to submit a claim for a meal.` and review the response. The agent should ask you for the required information to submit a claim.
-1. Provide the agent with an email address; for example, `fred@contoso.com`. The agent should acknowledge the response and request the remaining information required for the expense claim (description and amount)
-1. Submit a prompt that describes the claim and the amount; for example, `Breakfast cost me $20`.
-1. The agent should use the code interpreter to prepare the expense claim text file, and provide a link so you can download it.
+1. Try the following follow-up prompt: `I want to build mid-scale housing (5–15 units) in Quebec with a $3M budget. Provide a ready to download txt document to answer the question: "Which CMHC solutions apply?"` and review the response.
+1. The agent should use the code interpreter to prepare the housing solution text file, and provide a link so you can download it.
 
     ![Screenshot of the Agent Playground in Foundry portal.](./Media/ai-agent-code-interpreter.png)
 
-1. Download and open the text document to see the expense claim details.
+1. Download and open the text document to see the housing solution details.
 
 ## Optional: Explore the code
 
