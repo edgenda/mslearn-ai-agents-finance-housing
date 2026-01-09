@@ -74,7 +74,7 @@ Now that you have an agent crated, you're ready to configure it. In this exercis
         4. **Links to official resources** (when applicable)
         ```
 
-    ![Screenshot of the AI agent setup page in Foundry portal.](./Media/lab1-1.png)
+![Screenshot of the AI agent setup page in Foundry portal.](./Media/lab1-1.png)
 
 1. Below the **Instructions**, expand the **Tools** section.
 1. Select **Upload files**
