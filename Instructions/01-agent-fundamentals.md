@@ -98,7 +98,7 @@ Now that you've created an agent, you can test it in the playground chat.
 1. Try the following follow-up prompt: `I want to build mid-scale housing (5–15 units) in Quebec with a $3M budget. Provide a ready to download txt document to answer the question: "Which CMHC solutions apply?"` and review the response.
 1. The agent should use the code interpreter to prepare the housing solution text file, and provide a link so you can download it.
 
-    ![Screenshot of the Agent Playground in Foundry portal.](./Media/Lab1-2.png)
+    ![Screenshot of the Agent Playground in Foundry portal.](./Media/lab1-1.png)
 
 1. Download and open the text document to see the housing solution details.
 
